@@ -37,13 +37,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse("https://github.com/ameliachoi"));
                 startActivity(viewIntent);
-
-                /* track event */
-                Map<String, Object> eventValue = new HashMap<String, Object>();
-                eventValue.put(AFInAppEventParameterName.CONTENT_ID, "helloworld");
-                AppsFlyerLib.getInstance().logEvent(getApplicationContext(), AFInAppEventType.AD_CLICK, eventValue);
             }
-        });
+        };
+    }
 
         button2=(Button)findViewById(R.id.button_2id);
         button2.setOnClickListener(new View.OnClickListener() {
